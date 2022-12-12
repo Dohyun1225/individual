@@ -21,7 +21,7 @@ function MyDrawer(){
         <Drawer.Navigator initialRouteName="Home"
         drawerPosition='Left'
         >
-            <Drawer.Screen name="Home" component={Todo}/> 
+        <Drawer.Screen name="Home" component={Todo}/> 
       <Drawer.Screen name="InformationScreen" component={About} />
 
      

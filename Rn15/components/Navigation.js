@@ -7,7 +7,7 @@ import Home1 from "../Screen/Home1";
 import Home2 from "../Screen/Home2";
 import Home from "../Screen/HoChart";
 import About from "../Screen/About";
-import Todo from "../Screen/Home1";
+import Todo from "../Screen/About";
 import Sample1 from "../Screen/SampleSc";
 import Sample2 from "../Screen/Home2";
 import Sample3 from "../Screen/Home1";

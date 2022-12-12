@@ -78,7 +78,7 @@ export default function Sample1() {
       <Text></Text>
       <Text></Text>
      <Text>Todo list</Text>
-      <Button styles={styles.button} title="Add Text" onPress={addtoDB} />
+      <Button color="#2c2c2c" title="할 일 저장" onPress={addtoDB} />
 
       <TextInput
         placeholder="날짜"
@@ -94,13 +94,7 @@ export default function Sample1() {
       
       })}
 
-<Button title="Delete Text" onPress={deletefromDB} />
-<Text>삭제할 날짜를 적어주세요!</Text>
-      <TextInput
-        placeholder="삭제할 날짜를 적어주세요"
-        value={addName}
-        onChangeText={setAddName}
-      />
+
 
       
     </View>

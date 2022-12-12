@@ -17,12 +17,13 @@ import {
 
 function Sample3() {
     const [addName, setAddName] = useState('');
+    const [idx, setidx] = useState('');
     const [addAge, setAddAge] = useState('');
     const [id, setID] = useState('');
     const [users, setUsers] = useState();
       const updateDB = async ()=>{
         try{
-          const docRef = doc(db, "user", id);
+          const docRef = doc(db, "user", idx)
           await updateDoc(docRef, {
             addName: addName,
             addAge: addAge
@@ -79,20 +80,28 @@ function Sample3() {
     }
     
       return (
-        <View>
+        <View style={StyleSheet.fixToText}>
             <Text></Text>
             <Text></Text>
             <Text></Text>
             <Text>Todo 데이터 불러오기</Text>
             <Text>Todo 저장한 내용을 확인할 수 있습니다</Text>
-          <Button title="데이터 불러오기" onPress={readfromDB} />
+          <Button 
+           color="#2c2c2c"
+            title="데이터 불러오기" onPress={readfromDB} />
           {users?.map((row, idx) => {
-            
-            return <Text>{row.addName},{row.addAge}</Text>;
+           
+            return <Text>User- {idx}{row.addName},{row.addAge}</Text>;
           })}
 
-<Button title="변경하기" onPress={updateDB} />
-<Text>날짜는 정확히 기입해야해요!</Text>
+<Button  color="#2c2c2c" title="변경하기" onPress={updateDB} />
+<Text>아이디 숫자를 정확히 입력하세요!</Text>
+      
+  <TextInput
+        placeholder="숫자만 입력"
+        value={idx}
+        onChangeText={setidx}
+      />
       
       <TextInput
         placeholder="날짜"
@@ -104,10 +113,20 @@ function Sample3() {
         value={addAge}
         onChangeText={setAddAge}
       />
-
+      
 
         </View>);
     }
+
+    const style = StyleSheet.create(
+      {
+
+        fixToText:{
+          flexDirection: 'row',
+          justifyContent: 'spece-between',
+        }
+      }
+    )
     
 
     export default Sample3;
